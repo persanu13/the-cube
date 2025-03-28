@@ -37,7 +37,7 @@ export default function Input({
       </label>
       <div className="relative">
         <input
-          className="bg-spring-wood-50 block w-full rounded-sm  py-2 pl-8
+          className="bg-spring-white block w-full rounded-sm  py-2 pl-8
           outline-1 outline-tuatara-400 placeholder:text-tuatara-400 placeholder:font-light
           focus:outline-carnation-400 focus:border-carnation-400 focus:shadow-glow-carnation"
           id={name}

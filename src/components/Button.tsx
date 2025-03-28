@@ -20,10 +20,10 @@ export default function Button({
       {...rest}
       type="submit"
       className={clsx(
-        `group flex flex-row items-center justify-center text-xl px-1 py-2 font-jost transition duration-500
+        `group flex flex-row items-center justify-center text-xl px-1 py-[6px] font-jost transition duration-500
         border-[2px] border-charade-950 cursor-pointer relative  hover:translate-x-2`,
         {
-          "bg-carnation-400 text-spring-wood-50 shadow-red hover:bg-carnation-500":
+          "bg-carnation-400 text-spring-white shadow-red hover:bg-carnation-500":
             variant === "primary",
           "bg-broom-300 text-charade-950 shadow-yellow hover:bg-broom-400":
             variant === "secondary",
