@@ -11,7 +11,7 @@
   --broom-200: #fffa89;
   --broom-300: #feed2f;
   --broom-400: #fbdf14;
-  --spring-wood-50: #fdfcf8;
+  --spring-white: #fdfdfd;
   --spring-wood-100: #f6f2de;
   --spring-wood-200: #ebe1bd;
   --bej-50: #f9f7f3;
@@ -31,7 +31,7 @@
   --color-broom-200: var(--broom-200);
   --color-broom-300: var(--broom-300);
   --color-broom-400: var(--broom-400);
-  --color-spring-wood-50: var(--spring-wood-50);
+  --color-spring-white: var(--spring-white);
   --color-spring-wood-100: var(--spring-wood-100);
   --color-spring-wood-200: var(--spring-wood-200);
   --color-bej-50: var(--bej-50);
@@ -39,7 +39,25 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-jost: var(--font-jost);
-  --font-mono: var(--font-geist-mono);
+  --font-hanuman: var(--font-hanuman);
+  --font-inter: var(--font-inter);
+  --shadow-red: inset 4px 4px 0px 0px var(--spring-white),
+    5px 5px 0px -1px var(--carnation-400);
+  --shadow-yellow: inset 4px 4px 0px 0px var(--spring-white),
+    5px 5px 0px -1px var(--color-broom-300);
+  --shadow-glow-carnation: 0px 0px 4px 1px var(--carnation-400);
+  --animate-left-right: left-right 2s ease-in-out infinite alternate;
+  @keyframes left-right {
+    0% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
