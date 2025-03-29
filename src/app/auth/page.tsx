@@ -1,18 +1,18 @@
-"use client";
-import clsx from "clsx";
-import { useState } from "react";
-import AuthInput from "@/components/AuthInput";
-import Button from "@/components/Button";
+import { auth } from "@/auth/auth";
 import Logo from "@/components/Logo";
 import GithubButton from "@/ui/auth/github-button";
 import LoginForm from "@/ui/auth/login-form";
 import RegisterForm from "@/ui/auth/register-form";
+import { SwichButton } from "@/ui/auth/swich-button";
 
-export default function AuthPage() {
-  const [swich, setSwich] = useState(false);
-  const swichFunction = () => {
-    setSwich(!swich!);
-  };
+export default async function AuthPage(props: {
+  searchParams?: Promise<{
+    tab?: string;
+  }>;
+}) {
+  const searchParams = await props.searchParams;
+  const tab = searchParams?.tab || "login";
+  const swich = tab == "register";
   return (
     <div className="flex flex-col min-h-screen bg-bej-100 pb-5">
       <div className="flex flex-col pt-6 px-[25px] pb-16  bg-spring-white">
@@ -34,24 +34,14 @@ export default function AuthPage() {
             <LoginForm />
           </div>
         ) : (
-          <Button
-            onClick={swichFunction}
-            className="mt-7"
-            variant="secondary"
-            text="LOG IN"
-          />
+          <SwichButton tab="login" text="LOG IN" />
         )}
       </div>
       <span className="border-b-2 border-charade-950 mx-4"></span>
       <div className="flex flex-col py-6 px-[25px]  ">
         <h2 className="text-xl mt-3 font-jost">Create a new Account</h2>
         {!swich ? (
-          <Button
-            onClick={swichFunction}
-            className="mt-7"
-            variant="secondary"
-            text="CREATE ACCOUNT"
-          />
+          <SwichButton tab="register" text="CREATE ACCOUNT" />
         ) : (
           <RegisterForm />
         )}
