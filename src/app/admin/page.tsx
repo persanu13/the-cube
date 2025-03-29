@@ -1,9 +1,9 @@
 import { LogOutButton } from "@/ui/auth/logout-button";
 
-export default async function MainPage() {
+export default async function AdminPage() {
   return (
     <div>
-      <h1>Main Page</h1>
+      <h1>Admin Page</h1>
       <LogOutButton />
     </div>
   );
